@@ -142,3 +142,4 @@ C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\MVCApp\obj
 C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\MVCApp\obj\Debug\net8.0\MVCApp.pdb
 C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\MVCApp\obj\Debug\net8.0\MVCApp.genruntimeconfig.cache
 C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\MVCApp\obj\Debug\net8.0\ref\MVCApp.dll
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\MVCApp\obj\Debug\net8.0\MVCApp.sourcelink.json

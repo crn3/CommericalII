@@ -2,16 +2,19 @@
 <form method="post" asp-action="Edit">
 	<h2>Edit appointment</h2>
 	<div asp-validation-summary="All"></div>
+	
 	<div class="mb-3">
-		<label asp-for="PatientId">Patient ID</label>
-		<input asp-for="PatientId" class="form-control" />
+		<label asp-for="PatientId">Patient</label>
+		<select asp-for="PatientId" asp-items="ViewBag.PatientList" class="form-select"></select>
 		<span asp-validation-for="PatientId" class="text-danger"></span>
 	</div>
+
 	<div class="mb-3">
-		<label asp-for="DoctorId">Doctor ID</label>
-		<input asp-for="DoctorId" class="form-control" />
+		<label asp-for="DoctorId">Doctor</label>
+		<select asp-for="DoctorId" asp-items="ViewBag.DoctorList" class="form-select"></select>
 		<span asp-validation-for="DoctorId" class="text-danger"></span>
 	</div>
+
 	<div class="mb-3">
 		<label asp-for="AppDate">Appointment Date</label>
 		<input asp-for="AppDate" class="form-control" />

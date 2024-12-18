@@ -2,21 +2,28 @@
 <form method="post">
 	<h2>Create appointment</h2>
 	<div asp-validation-summary="All"></div>
-	<div class ="mb-3">
-		<label asp-for="PatientId">Patient ID</label>
-		<input asp-for="PatientId" class="form-control" />
+	
+	<div class="mb-3">
+		<label asp-for="PatientId">Patient</label>
+		<select asp-for="PatientId" asp-items="ViewBag.PatientList" class="form-select">
+			<option value="" selected disabled>Select patient...</option>
+		</select>
 		<span asp-validation-for="PatientId" class="text-danger"></span>
 	</div>
+	
 	<div class="mb-3">
-		<label asp-for="DoctorId">Doctor ID</label>
-		<input asp-for="DoctorId" class="form-control" />
-		<span asp-validation-for="DoctorId" class="text-danger"></span>
+		<label asp-for="DoctorId">Doctor</label>
+		<select asp-for="DoctorId" asp-items="ViewBag.DoctorList" class="form-select">
+			<option value="" selected disabled>Select doctor...</option>
+		</select><span asp-validation-for="DoctorId" class="text-danger"></span>
 	</div>
+	
 	<div class="mb-3">
 		<label asp-for="AppDate">Appointment Date</label>
 		<input asp-for="AppDate" class="form-control" />
 		<span asp-validation-for="AppDate" class="text-danger"></span>
 	</div>
+	
 	<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
 
 	<a asp-controller="Appointment" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to appointments</a>
