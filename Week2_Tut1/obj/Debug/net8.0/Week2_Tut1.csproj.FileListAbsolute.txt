@@ -1,0 +1,14 @@
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\bin\Debug\net8.0\Week2_Tut1.exe
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\bin\Debug\net8.0\Week2_Tut1.deps.json
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\bin\Debug\net8.0\Week2_Tut1.runtimeconfig.json
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\bin\Debug\net8.0\Week2_Tut1.dll
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\bin\Debug\net8.0\Week2_Tut1.pdb
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.AssemblyInfoInputs.cache
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.AssemblyInfo.cs
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.csproj.CoreCompileInputs.cache
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.dll
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\refint\Week2_Tut1.dll
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.pdb
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\Week2_Tut1.genruntimeconfig.cache
+C:\Users\racha\OneDrive - Atlantic TU\Year 3\Commercial Programming 2\Week2_Tut1\obj\Debug\net8.0\ref\Week2_Tut1.dll

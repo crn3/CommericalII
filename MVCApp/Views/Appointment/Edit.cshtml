@@ -1,0 +1,29 @@
+﻿@model Appointment
+<form method="post" asp-action="Edit">
+	<h2>Edit appointment</h2>
+	<div asp-validation-summary="All"></div>
+	<div class="mb-3">
+		<label asp-for="PatientId">Patient ID</label>
+		<input asp-for="PatientId" class="form-control" />
+		<span asp-validation-for="PatientId" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="DoctorId">Doctor ID</label>
+		<input asp-for="DoctorId" class="form-control" />
+		<span asp-validation-for="DoctorId" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="AppDate">Appointment Date</label>
+		<input asp-for="AppDate" class="form-control" />
+		<span asp-validation-for="AppDate" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+
+	<a asp-controller="Appointment" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to appointments</a>
+</form>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

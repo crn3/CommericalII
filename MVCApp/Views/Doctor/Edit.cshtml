@@ -1,0 +1,30 @@
+﻿@model Doctor
+<form method="post" asp-action="Edit">
+	<h2>Edit Doctor</h2>
+	<div asp-validation-summary="All"></div>
+	<div class="mb-3">
+		<label asp-for="FirstName">First name</label>
+		<input asp-for="FirstName" class="form-control" />
+		<span asp-validation-for="FirstName" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="LastName">Last name</label>
+		<input asp-for="LastName" class="form-control" />
+		<span asp-validation-for="LastName" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="Specialisation">Specialisation</label>
+		<input asp-for="Specialisation" class="form-control" />
+		<span asp-validation-for="Specialisation" class="text-danger"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+
+	<a asp-controller="Doctor" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to doctors</a>
+</form>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
