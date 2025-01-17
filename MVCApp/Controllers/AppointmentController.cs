@@ -9,18 +9,27 @@ namespace MVCApp.Controllers
 	public class AppointmentController : Controller
 	{
 		private readonly DoctorsOfficeDBContext _DbContext;
-		//Constructor to get a copy of the DBContext object
-		public AppointmentController(DoctorsOfficeDBContext CopyofdbContext)
-		{
-			_DbContext = CopyofdbContext;
-		}
-		public IActionResult Index()
+
+        public AppointmentController(DoctorsOfficeDBContext CopyofdbContext)
+        {
+            _DbContext = CopyofdbContext;
+        }
+
+		public IActionResult Index(string searchString)
 		{
 			IEnumerable<Appointment> appointmentList = _DbContext.Appointments
 				.Include(p => p.Patient)
 				.Include(a => a.Doctor)
-				.ToList(); //null reference error unless you force it to load data with ToList
-			return View(appointmentList);
+				.OrderBy(a => a.AppDate)
+				.ToList();//null reference error unless you force it to load data with ToList
+
+			if (!string.IsNullOrEmpty(searchString))
+			{
+				appointmentList = appointmentList.Where(a => 
+                    (a.Patient.FirstName + " " + a.Patient.LastName).Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
+					(a.Doctor.FirstName + " " + a.Doctor.LastName).Contains(searchString, StringComparison.OrdinalIgnoreCase));
+            }
+            return View(appointmentList);
 		}
 
 		[HttpGet]
@@ -30,7 +39,7 @@ namespace MVCApp.Controllers
 				.Select(n => new SelectListItem
 				{
 					Text = $"{n.FirstName} {n.LastName}",
-					Value = n.Id.ToString()
+					Value = n.PPS
 				})
 				.ToList();
 
@@ -77,7 +86,7 @@ namespace MVCApp.Controllers
 				.Select(p => new SelectListItem
 				{
 					Text = $"{p.FirstName} {p.LastName}",
-					Value = p.Id.ToString()
+					Value = p.PPS
 				}).ToList();
 
 			ViewBag.DoctorList = _DbContext.Doctors

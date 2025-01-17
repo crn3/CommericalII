@@ -1,15 +1,26 @@
 ﻿@model IEnumerable<Patient>
 @{
-    ViewData["Title"] = "Index Patients";
+    ViewData["Title"] = "Patients";
 }
 <h1>Patients</h1>
+
+<p>
+    <form class="d-flex" class="col-3">
+        <input type="text" placeholder="Search..." class="form-control me-sm-2" name="searchString" />
+        <input type="submit" value="Search" class="btn btn-outline-primary form-control" style="width:200px" />
+        <a asp-route-Doctors="" asp-route-SearchString="" class="btn btn-outline-secondary"> Clear</a>
+    </form>
+</p>
+
 <a asp-controller="Patient" asp-action="Create" class="btn btn-primary">
     Add Patient
 </a>
-<table>
+<br />
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>PPS</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Date of Birth</th>
@@ -23,7 +34,7 @@
         @foreach (var obj in Model)
         {
             <tr>
-                <td width="5%">@obj.Id</td>
+                <td width="5%">@obj.PPS</td>
                 <td width="15%">@obj.FirstName</td>
                 <td width="15%">@obj.LastName</td>
                 <td width="15%">@obj.DOB.ToShortDateString()</td>
@@ -32,12 +43,12 @@
                 <td width="25%">@obj.Address</td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Patient" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                        <a asp-controler="Patient" asp-action="Edit" asp-route-id="@obj.PPS">Edit</a>
                     </div>
                 </td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Patient" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary mx-2">Delete</a>
+                        <a asp-controler="Patient" asp-action="Delete" asp-route-id="@obj.PPS" class="btn btn-primary mx-2">Delete</a>
                     </div>
                 </td>
             </tr>

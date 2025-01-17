@@ -1,8 +1,64 @@
-﻿@{
+﻿@model List<MVCApp.Models.Appointment>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1 id="currentDateTime"></h1>
+<br />
+<h3>Today's Appointments</h3>
+
+@if (!Model.Any())
+{
+    <p><i>No remaining appointments.</i></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Appt. ID</th>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.Id</td>
+                    <td>@($"{appointment.Patient.FirstName} {appointment.Patient.LastName}")</td>
+                    <td>@($"{appointment.Doctor.FirstName} {appointment.Doctor.LastName}")</td>
+                    <td>@appointment.AppDate.ToString("HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div>
+    <a asp-controller="Appointment" asp-action="Index" class="btn btn-primary">
+        View all appointments
+    </a>
 </div>
+
+
+
+
+<script>
+    function updateDateTime() {
+        var current = new Date();
+
+        var day = current.toLocaleString('en-GB', { weekday: 'long' });
+        var date = current.getDate();
+        var month = current.toLocaleString('en-GB', { month: 'short' });
+        var hour = current.getHours().toString().padStart(2, '0');
+        var minute = current.getMinutes().toString().padStart(2, '0');
+
+        var formatted = `${day} ${date} ${month} ${hour}:${minute}`;
+
+        document.getElementById('currentDateTime').innerText = formatted;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); 
+</script>

@@ -1,5 +1,5 @@
 ﻿@model Doctor
-<form method="post">
+<form method="post" asp-action="Create" enctype="multipart/form-data">
 	<h2>Add Doctor</h2>
 	<div asp-validation-summary="All"></div>
 	<div class="mb-3">
@@ -16,6 +16,10 @@
 		<label asp-for="Specialisation">Specialisation</label>
 		<input asp-for="Specialisation" class="form-control" />
 		<span asp-validation-for="Specialisation" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="Image">Image File</label>
+		<input type="file" name="file" class="form-control"/>
 	</div>
 	
 	<button type="submit" class="btn btn-primary" style="width:150px">Create</button>

@@ -9,5 +9,6 @@ namespace MVCApp.Models
         public string LastName { get; set; }
         public string Specialisation { get; set; }
         public List<Appointment>Appointments { get; set; }
-    }
+		public string Image { get; internal set; }
+	}
 }

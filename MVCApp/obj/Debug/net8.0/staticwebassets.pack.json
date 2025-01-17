@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\MVCApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\Images\\Doctor\\4aa83a26-7b6b-43ec-bd84-042d58eea141.png",
+      "PackagePath": "staticwebassets\\Images\\Doctor\\4aa83a26-7b6b-43ec-bd84-042d58eea141.png"
+    },
+    {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\Images\\Doctor\\8aa83264-2666-4474-88c5-a63f60e4f2e8.png",
+      "PackagePath": "staticwebassets\\Images\\Doctor\\8aa83264-2666-4474-88c5-a63f60e4f2e8.png"
+    },
+    {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\Images\\Doctor\\9e2ead54-9605-40c3-bf24-2116537149c7.png",
+      "PackagePath": "staticwebassets\\Images\\Doctor\\9e2ead54-9605-40c3-bf24-2116537149c7.png"
+    },
+    {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\Images\\Doctor\\a342f1a5-2452-495f-9190-1c98373695cc.png",
+      "PackagePath": "staticwebassets\\Images\\Doctor\\a342f1a5-2452-495f-9190-1c98373695cc.png"
+    },
+    {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\Images\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\css\\BootswatchTheme.css",
+      "PackagePath": "staticwebassets\\css\\BootswatchTheme.css"
+    },
+    {
       "Id": "C:\\Users\\racha\\OneDrive - Atlantic TU\\Year 3\\Commercial Programming 2\\MVCApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

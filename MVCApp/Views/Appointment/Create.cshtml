@@ -4,11 +4,11 @@
 	<div asp-validation-summary="All"></div>
 	
 	<div class="mb-3">
-		<label asp-for="PatientId">Patient</label>
-		<select asp-for="PatientId" asp-items="ViewBag.PatientList" class="form-select">
+		<label asp-for="PPS">Patient</label>
+		<select asp-for="PPS" asp-items="ViewBag.PatientList" class="form-select">
 			<option value="" selected disabled>Select patient...</option>
 		</select>
-		<span asp-validation-for="PatientId" class="text-danger"></span>
+		<span asp-validation-for="PPS" class="text-danger"></span>
 	</div>
 	
 	<div class="mb-3">

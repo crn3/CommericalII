@@ -1,18 +1,30 @@
 ﻿@model IEnumerable<Appointment>
 @{
-    ViewData["Title"] = "Index Appointments";
+    ViewData["Title"] = "Appointments";
 }
 <h1>Appointments</h1>
 
+<p>
+    <form class="d-flex" class="col-3">
+        <input type="text" placeholder="Search..." class="form-control me-sm-2" name="searchString" />
+        <input type="submit" value="Search" class="btn btn-outline-primary form-control" style="width:200px" />
+        <a asp-route-Doctors="" asp-route-SearchString="" class="btn btn-outline-secondary"> Clear</a>
+    </form>
+</p>
+
 <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary">
-Create appointment</a>
-<table>
+    Create appointment
+</a>
+<br />
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Appt. ID</th>
             <th>Patient Name</th>
             <th>Doctor Name</th>
-            <th>Appointment Date</th>
+            <th>Date</th>
+            <th>Time</th>
             <th></th>
         </tr>
     </thead>
@@ -20,19 +32,19 @@ Create appointment</a>
         @foreach (var obj in Model)
         {
             <tr>
-                <td width ="10%">@obj.Id</td>
-                <td width ="25%">@($"{obj.Patient.FirstName} {obj.Patient.LastName}")</td>
-                <td width ="25%">@($"{obj.Doctor.FirstName} {obj.Doctor.LastName}")</td>
-                <td width ="25%">@obj.AppDate.ToString("HH:mm")
-                </td>
+                <td width="10%">@obj.Id</td>
+                <td width="25%">@($"{obj.Patient.FirstName} {obj.Patient.LastName}")</td>
+                <td width="25%">@($"{obj.Doctor.FirstName} {obj.Doctor.LastName}")</td>
+                <td width="25%">@obj.AppDate.ToString("dddd, dd MMMM yyyy")</td>
+                <td width="25%">@obj.AppDate.ToString("HH:mm")</td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Appointment" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                        <a asp-controller="Appointment" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
                     </div>
                 </td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Appointment" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary mx-2">Delete</a>
+                        <a asp-controller="Appointment" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary mx-2">Delete</a>
                     </div>
                 </td>
             </tr>

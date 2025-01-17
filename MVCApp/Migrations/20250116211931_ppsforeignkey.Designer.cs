@@ -4,6 +4,7 @@ using MVCApp.DBOperations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(DoctorsOfficeDBContext))]
-    partial class DoctorsOfficeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250116211931_ppsforeignkey")]
+    partial class ppsforeignkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

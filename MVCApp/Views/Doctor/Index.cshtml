@@ -3,12 +3,24 @@
     ViewData["Title"] = "Doctors";
 }
 <h1>Doctors</h1>
+
+<p>
+    <form class="d-flex" class="col-3">
+        <input type="text" placeholder="Search..." class="form-control me-sm-2" name="searchString" />
+        <input type="submit" value="Search" class="btn btn-outline-primary form-control" style="width:200px" />
+        <a asp-route-Doctors="" asp-route-SearchString="" class="btn btn-outline-secondary"> Clear</a>
+    </form>
+</p>
+
 <a asp-controller="Doctor" asp-action="Create" class="btn btn-primary">
     Add Doctor
 </a>
-<table>
+<br />
+
+<table class="table table-striped">
     <thead>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -20,18 +32,24 @@
         @foreach (var obj in Model)
         {
             <tr>
-                <td width ="5%">@obj.Id</td>
-                <td width ="20%">@obj.FirstName</td>
-                <td width ="20%">@obj.LastName</td>
-                <td width ="30%">@obj.Specialisation</td>
+                <td width ="10%">
+                    @if (!string.IsNullOrEmpty(obj.Image))
+                    {
+                                <img src="@Url.Content($"~/{obj.Image}")" class="img-thumbnail" style="width: 100px; height: auto;" />
+
+                    }
+                <td >@obj.Id</td>
+                <td >@obj.FirstName</td>
+                <td >@obj.LastName</td>
+                <td >@obj.Specialisation</td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Doctor" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                        <a asp-controller="Doctor" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
                     </div>
                 </td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controler="Doctor" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary mx-2">Delete</a>
+                        <a asp-controller="Doctor" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary mx-2">Delete</a>
                     </div>
                 </td>
             </tr>

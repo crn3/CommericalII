@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCApp.Migrations
 {
     [DbContext(typeof(DoctorsOfficeDBContext))]
-    [Migration("20241115164749_initial")]
-    partial class initial
+    [Migration("20250116211029_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,14 +39,17 @@ namespace MVCApp.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
+                    b.Property<string>("PPS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientPPS")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");
 
-                    b.HasIndex("PatientId");
+                    b.HasIndex("PatientPPS");
 
                     b.ToTable("Appointments");
                 });
@@ -62,6 +65,9 @@ namespace MVCApp.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -75,11 +81,8 @@ namespace MVCApp.Migrations
 
             modelBuilder.Entity("MVCApp.Models.Patient", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("PPS")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -99,7 +102,7 @@ namespace MVCApp.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PPS");
 
                     b.ToTable("Patients");
                 });
@@ -114,9 +117,7 @@ namespace MVCApp.Migrations
 
                     b.HasOne("MVCApp.Models.Patient", "Patient")
                         .WithMany("Appointments")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PatientPPS");
 
                     b.Navigation("Doctor");
 
